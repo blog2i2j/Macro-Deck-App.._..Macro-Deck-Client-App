@@ -24,7 +24,7 @@ lane :build do
         clean: true,
         silent: false,
         output_name: "macro-deck-client.ipa",
-        output_directory: artifacts,
+        output_directory: "artifacts",
         export_options: {
           generateAppStoreInformation: true
         }
