@@ -41,7 +41,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.meta.outputs.artifact_name }}-ios
-          path: iOS/
+          path: ios/
           if-no-files-found: error
           retention-days: 1
       - uses: actions/upload-artifact@v4
