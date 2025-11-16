@@ -20,6 +20,9 @@ lane :build do
     get_certs
     update_code_signing_settings
     clear_derived_data
+    cocoapods(
+      clean: true
+    )
     build_app(
         clean: true,
         silent: false,
