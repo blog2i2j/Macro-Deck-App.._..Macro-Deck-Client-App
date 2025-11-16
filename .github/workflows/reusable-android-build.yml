@@ -58,10 +58,9 @@ jobs:
       - name: "Build project"
         env:
           VERSION_NUMBER: ${{ inputs.version }}
-          KEY_ID: ${{secrets.APPSTORE_KEY_ID}}
-          ISSUER_ID: ${{secrets.APPSTORE_KEY_ISSUER_ID}}
-          KEY_CONTENT: ${{secrets.APPSTORE_KEY_CONTENT}}
-          MATCH_PASSWORD: ${{secrets.MATCH_PASSWORD}}
+          KEYSTORE_FILE_PATH: ${{env.KEYSTORE_PATH}}
+          KEYSTORE_FILE_PASSWORD: ${{secrets.ANDROID_KEYSTORE_PASSWORD}}
+          KEYSTORE_FILE_ALIAS: ${{secrets.ANDROID_KEYSTORE_KEY}}
         run: |
           export BUILD_NUMBER=$(( ${{ github.run_number }} + 3000 ))
           cd android
