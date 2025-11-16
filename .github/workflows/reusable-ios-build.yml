@@ -24,12 +24,12 @@ jobs:
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - name: Download base build artifact
+      - name: Download www base build artifact
         uses: actions/download-artifact@v4
         with:
           name: ${{ inputs.base-build-artifact-name }}-www
           path: www/
-      - name: Download base build artifact
+      - name: Download ios base build artifact
         uses: actions/download-artifact@v4
         with:
           name: ${{ inputs.base-build-artifact-name }}-ios

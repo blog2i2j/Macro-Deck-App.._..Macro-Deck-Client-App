@@ -32,19 +32,22 @@ jobs:
         run: |
           ARTIFACT_NAME="base-build-${GITHUB_RUN_ID}"
           echo "artifact_name=$ARTIFACT_NAME" >> $GITHUB_OUTPUT
-      - uses: actions/upload-artifact@v4
+      - name: Upload www artifacts
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.meta.outputs.artifact_name }}-www
           path: www/
           if-no-files-found: error
           retention-days: 1
-      - uses: actions/upload-artifact@v4
+      - name: Upload ios artifacts
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.meta.outputs.artifact_name }}-ios
           path: ios/
           if-no-files-found: error
           retention-days: 1
-      - uses: actions/upload-artifact@v4
+      - name: Upload android artifacts
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.meta.outputs.artifact_name }}-android
           path: android/
