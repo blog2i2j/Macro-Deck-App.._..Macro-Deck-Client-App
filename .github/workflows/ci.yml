@@ -24,3 +24,11 @@ jobs:
     with:
       version: ${{ needs.determine-version.outputs.version }}
       base-build-artifact-name: ${{ needs.base-build.outputs.artifact_name }}
+
+  android-build:
+    needs: [determine-version, base-build]
+    uses: ./.github/workflows/reusable-android-build.yml
+    secrets: inherit
+    with:
+      version: ${{ needs.determine-version.outputs.version }}
+      base-build-artifact-name: ${{ needs.base-build.outputs.artifact_name }}
