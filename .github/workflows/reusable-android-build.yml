@@ -64,7 +64,7 @@ jobs:
           MATCH_PASSWORD: ${{secrets.MATCH_PASSWORD}}
         run: |
           export BUILD_NUMBER=$(( ${{ github.run_number }} + 3000 ))
-          cd android/App
+          cd android
           bundle install
           fastlane build
       - name: Generate artifact name
