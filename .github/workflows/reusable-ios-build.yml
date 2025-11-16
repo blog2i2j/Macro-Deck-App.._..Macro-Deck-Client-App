@@ -49,6 +49,7 @@ jobs:
         run: |
           export BUILD_NUMBER=$(( ${{ github.run_number }} + 3000 ))
           cd ios/App
+          bundle install
           fastlane build
       - name: Generate artifact name
         id: meta

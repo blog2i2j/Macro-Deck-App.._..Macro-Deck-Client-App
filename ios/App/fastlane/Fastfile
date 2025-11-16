@@ -21,7 +21,7 @@ lane :build do
     update_code_signing_settings
     clear_derived_data
     cocoapods(
-      clean: true
+        clean_install: true
     )
     build_app(
         clean: true,
