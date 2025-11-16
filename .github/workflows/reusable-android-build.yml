@@ -13,6 +13,10 @@ on:
         description: "Name of the uploaded artifact"
         value: ${{ jobs.ios-build.outputs.artifact_name }}
 
+env:
+  KEYSTORE_PATH: "${{ github.workspace }}/keystore.jks"
+  FIREBASE_CREDENTIALS_PATH: "${{ github.workspace }}/firebase.json"
+
 jobs:
   ios-build:
     name: Build Android project
