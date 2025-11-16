@@ -39,6 +39,13 @@ jobs:
           path: www/
           if-no-files-found: error
           retention-days: 1
+      - name: Upload node artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.meta.outputs.artifact_name }}-node
+          path: node_modules/
+          if-no-files-found: error
+          retention-days: 1
       - name: Upload ios artifacts
         uses: actions/upload-artifact@v4
         with:

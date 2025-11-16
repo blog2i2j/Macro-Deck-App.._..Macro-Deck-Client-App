@@ -29,6 +29,11 @@ jobs:
         with:
           name: ${{ inputs.base-build-artifact-name }}-www
           path: www/
+      - name: Download node base build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.base-build-artifact-name }}-node
+          path: node_modules/
       - name: Download ios base build artifact
         uses: actions/download-artifact@v4
         with:
